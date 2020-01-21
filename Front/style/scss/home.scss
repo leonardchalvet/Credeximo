@@ -6,7 +6,8 @@
 ================================*/
 
 header{
-	background-color: #FFF;
+	background-color: rgba(255, 255, 255, 0.8);
+	backdrop-filter: blur(16px);
 	position: fixed;
 	z-index: 20;
 	width: 100%;
@@ -268,6 +269,138 @@ footer{
 		p{
 			@include styleParagraphMedium;
 			color: #A4A4A4;
+		}
+	}
+}
+
+
+@media screen and (min-width: $breakPoint_mobile) and (max-width: $breakPoint_tablet){
+}
+@media screen and (max-width: $breakPoint_mobile){
+	header{
+		padding: 20px 25px 20px 25px;
+		.logo{
+			width: 130px;
+			margin-right: 0px;
+		}
+		.container-link{
+			display: none;
+		}
+		.btn{
+			padding: 15px 10px 15px 10px;
+			right: 25px;
+		}
+	}
+	main{
+		padding-top: 90px;
+	}
+	.section-cover{
+		.background{
+			width: 100%;
+		}
+		h1{
+			width: 100%;
+		}
+		.container-mail{
+			width: 100%;
+			form{
+				input{
+					flex: initial;
+					margin-right: 0px;
+					width: 100%;
+					padding-bottom: 30px;
+				}
+				button{
+					width: 100%;
+					margin-top: 40px;
+				}
+			}
+		}
+	}
+	.section-features{
+		padding-top: 80px;
+		.container-el{
+			margin-top: 80px;
+			.el{
+				width: 100%;
+				display: flex;
+				flex-flow: row wrap;
+				&:nth-child(1){
+					padding-top: 0px;
+					.text{
+						width: 100%;
+						order: 1;
+						margin-bottom: 40px;
+					}
+					.img{
+						order: 2;
+						width: 100%;
+						height: 200px;
+					}
+				}
+				&:nth-child(2){
+					margin-top: 80px;
+					.text{
+						margin-top: 0px;
+						width: 100%;
+						order: 1;
+						margin-bottom: 40px;
+					}
+					.img{
+						order: 2;
+						width: 100%;
+						height: 200px;
+					}
+				}
+			}
+		}
+	}
+	.section-team{
+		margin-top: 90px;
+		padding-top: 80px;
+		.background{
+			width: 100%;
+		}
+		.container-title{
+			.desc{
+				margin-top: 30px;
+				width: 100%;
+				p{
+					margin-bottom: 30px;
+				}
+			}
+		}
+		.container-team{
+			width: calc(100% + 50px);
+			margin-left: -25px;
+			padding: 0px 25px 0px 25px;
+			flex-wrap: nowrap;
+			-webkit-overflow-scrolling: touch;
+			overflow: auto;
+			.team{
+				flex: 0 0 auto;
+				width: 200px;
+				&:not(:last-child){
+					margin-right: 25px;
+				}
+				img{
+					height: 250px;
+				}
+			}
+		}
+	}
+	.section-place{
+		.container-title{
+			width: 100%;
+		}
+		.container-places{
+			margin-top: 50px;
+			.place{
+				width: 100%;
+				&:not(:last-child){
+					margin-bottom: 50px;
+				}
+			}
 		}
 	}
 }
