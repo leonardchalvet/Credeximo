@@ -52,78 +52,55 @@ curl_close ($ch);
 // Index page
 $app->get('/', function ($request, $response) use ($app, $prismic) {
       
-    $api = $prismic->get_api(); // PART 1 - Call api
+    $api = $prismic->get_api();
 
-    //PART 2 - Select languages
-    $language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-    $allLang = switchLanguages($language);
-    $options = false;
-    if($allLang) {
-        foreach ($allLang as $lang) {
-            $testReturn = $api->getByUID('header', 'header', [ 'lang' => $lang ] );
-            if($testReturn) {
-                $options = [ 'lang' => $lang ];
-                break;
-            }
+    $header   = $api->getByUID('header',  'header');
+    $footer   = $api->getByUID('footer' , 'footer');
+
+    $document = $api->query(Predicates::at('document.type', 'home'), $options);
+    $document = $document->results[0];
+        
+    render($app, 'home', array('document' => $document, 'header' => $header, 'footer' => $footer));
+
+});
+
+// Call page with language and name => https://url.com/language/namepage
+$app->map(['GET', 'POST'], '/{uid}', function ($request, $response, $args) use ($app, $prismic) {
+    renderPage($request, $response, $args, $app, $prismic);
+});
+
+$app->get('/{location}/', function ($request, $response, $args) use ($app, $prismic) {
+    header('HTTP/1.1 301 Moved Permanently', false, 301);
+    header('Location: /'.$args['location']);
+    exit;
+});
+
+function renderPage($request, $response, $args, $app, $prismic) {
+
+    $api = $prismic->get_api();
+
+    $header   = $api->getByUID('header',  'header');
+    $footer   = $api->getByUID('footer' , 'footer');
+
+    $document = NULL;
+    $nType = 0;
+    $arrayTypes = [ 'contact' ];
+    $arrayView  = [ 'contact' ];
+    foreach ($arrayTypes as $type) {
+        $document = $api->getByUID($type, $args['uid']);
+        
+        $nType++;
+        if($document != NULL) {
+            break;
         }
     }
 
-    if(!$options) {
-        header('HTTP/1.1 301 Moved Permanently', false, 301);
-        header('Location: /'); // LANGUAGE 'MATER LOCAL'
-        exit;
+    if($document != NULL) {
+      render($app, $arrayView[$nType-1], array('document' => $document, 'header' => $header, 'footer' => $footer));
     }
     else {
-
-        //PART 3 - Call Header & Footer & Lightbox
-        $header   = $api->getByUID('header',   'header',   $options);
-        $footer   = $api->getByUID('footer' ,  'footer',   $options);
-
-        //PART 4 - Call Home
-        $document = $api->query(Predicates::at('document.type', 'home'), $options);
-        $document = $document->results[0];
-        
-        //PART 5 - Render the page
-        render($app, 'home', array('document' => $document, 'header' => $header, 'footer' => $footer ));
-
-    }
-
-});
-
-$app->get('/{header}', function ($request, $response, $args) use ($app, $prismic) {
-    header('HTTP/1.1 301 Moved Permanently', false, 301);
-    header('Location: /');
-    exit;
-});
-
-$app->get('/{header}/', function ($request, $response, $args) use ($app, $prismic) {
-    header('HTTP/1.1 301 Moved Permanently', false, 301);
-    header('Location: /');
-    exit;
-});
-
-//ADD LANGUAGES FOR MORE POSSIBILITIES
-function switchLanguages($lg) {
-
-    $lglg = '';
-    switch (strtoupper($lg)) {
-
-        case 'FR': return [ 'fr-fr', 'fr-be', 'fr-ca', 'fr-lu', 'fr-ch' ];
-        case 'BE': return [ 'fr-be' ];
-
-        case 'EN': return [ 'en-us', 'en-au', 'en-eu', 'en-bz', 'en-ca', 'en-de', 'en-gb', 'en-in', 'en-ie', 'en-jm', 'en-nz', 'en-ph', 'en-pl', 'en-za', 'en-tt' ];
-        case 'US': return [ 'en-us', 'en-au', 'en-eu', 'en-bz', 'en-ca', 'en-de', 'en-gb', 'en-in', 'en-ie', 'en-jm', 'en-nz', 'en-ph', 'en-pl', 'en-za', 'en-tt' ];
-        
-        case 'DE': return [ 'de-at', 'de-de', 'de-li', 'de-lu', 'de-ch' ];
-        case 'LU': return [ 'de-lu' ];
-        
-        case 'ES': return [ 'es-ar', 'es-bo', 'es-cl', 'es-co', 'es-cr', 'es-do', 'es-ec', 'es-sv', 'es-gt', 'es-hn', 'es-mx', 'es-ni', 'es-pa', 'es-py', 'es-pe', 'es-pr', 'es-es', 'es-uy', 'es-ve' ];
-        case 'IT': return [ 'it-it', 'it-ch' ];
-        
-        case 'NL': return [ 'nl-nl' ];
-
-        case 'JP': return [ 'ja-jp' ];
-        
-        default: return false;
+      header('HTTP/1.1 301 Moved Permanently', false, 301);
+      header('Location: /');
+      exit;
     }
 }
