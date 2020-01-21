@@ -25,6 +25,60 @@
 		"oAP": "/common-header.php",
 		"oF": 0
 		},
+	"/fonts/NewYorkLarge-Bold.otf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/NewYorkLarge-Bold.otf",
+		"oF": 0
+		},
+	"/fonts/NewYorkLarge-Semibold.otf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/NewYorkLarge-Semibold.otf",
+		"oF": 0
+		},
+	"/fonts/OpenSans-Bold.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/OpenSans-Bold.ttf",
+		"oF": 0
+		},
+	"/fonts/OpenSans-Regular.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/OpenSans-Regular.ttf",
+		"oF": 0
+		},
+	"/img/common/logo-white.png": {
+		"ft": 32768,
+		"iS": 6884,
+		"oA": 0,
+		"oAP": "/img/common/logo-white.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/img/common/logo.png": {
+		"ft": 32768,
+		"iS": 10953,
+		"oA": 0,
+		"oAP": "/img/common/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/img/img-test/background-1.jpg": {
 		"ft": 16384,
 		"iS": 1065333,
@@ -220,8 +274,8 @@
 	},
 "projectAttributes": {
 	"creationDate": 561315058.37998199,
-	"displayValue": "Le Studio",
-	"displayValueWasSetByUser": 0,
+	"displayValue": "Credeximo",
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-ariel",
 	"iconImageWasSetByUser": 0
 	},
