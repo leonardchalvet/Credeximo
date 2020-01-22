@@ -31,7 +31,7 @@
 					</div>
 				
 
-					<form action="">
+					<form action="" onsubmit="return false;">
 						<div class="container-col">
 							<div class="col">
 								<div class="container-input">
@@ -114,7 +114,7 @@
 									</div>
 								</div>
 								
-								<button class="error">
+								<button class="">
 									<span class="btn-text">
 										ENVOYER
 									</span>
