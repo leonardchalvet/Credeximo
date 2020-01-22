@@ -9,6 +9,8 @@ $document = $WPGLOBAL['document']->data;
 
     <meta name="description" content="<?= RichText::asText($document->global_description); ?>" />
 
+    <meta property="og:image" content="<?= $document->global_img->url; ?>" />
+
     <meta http-equiv="content-type" content="text/html; charset=utf8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
