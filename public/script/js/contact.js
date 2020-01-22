@@ -57,7 +57,7 @@ $(window).on('load', function() {
 				$('.section-contact form .container-col .col button').addClass('loading').removeClass('error');
 				$('input, textarea').attr('readonly', true);
 
-				let form = $(this).parent();
+				let form = $(this).parent().parent().parent();
 				$.ajax({
 					url : 'sendMail.php',
 					type : 'POST',
@@ -69,6 +69,7 @@ $(window).on('load', function() {
 						else {
 							$('input, textarea').attr('readonly', false);
 							$('.section-contact form .container-col .col button').removeClass('loading').addClass('error');
+							stateForm = false;
 						}
 					}
 				});
