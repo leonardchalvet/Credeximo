@@ -17,18 +17,7 @@
 
 		<main>
 
-			<header>
-				<img class="logo" src="img/common/logo.png" alt="">
-				<div class="container-link">
-					<a href="#anchor-section-features">Notre mission</a>
-					<a href="#anchor-section-team">Notre équipe</a>
-				</div>
-				<a href="tel:0681498185" class="btn">
-					<span class="btn-text">
-						06 81 49 81 85
-					</span>
-				</a>
-			</header>
+			<?php include('common-header.php') ?>
 
 			<section class="section-cover">
 				<div class="background"></div>
@@ -199,15 +188,7 @@
 				</div>
 			</section>
 
-			<footer>
-
-				<img class="logo" src="img/common/logo-white.png" alt="">
-
-				<div class="foot">
-					<p>©2019Credeximo. All rights Reserved</p>
-				</div>
-				
-			</footer>
+			<?php include('common-footer.php') ?>
 			
 		</main>
 

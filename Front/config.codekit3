@@ -25,6 +25,14 @@
 		"oAP": "/common-header.php",
 		"oF": 0
 		},
+	"/contact.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/contact.php",
+		"oF": 0
+		},
 	"/fonts/NewYorkLarge-Bold.otf": {
 		"cB": 0,
 		"ft": 8192,
@@ -197,6 +205,16 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"/style/css/contact.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/style/css/contact-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/style/css/home.css": {
 		"aP": 1,
 		"bl": 0,
@@ -225,6 +243,19 @@
 		"oA": 1,
 		"oAP": "/style/css/common.css",
 		"oF": 2,
+		"oS": 3,
+		"uL": 1
+		},
+	"/style/scss/contact.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/style/css/contact.css",
+		"oF": 0,
 		"oS": 3,
 		"uL": 1
 		},
