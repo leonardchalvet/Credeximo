@@ -205,6 +205,17 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"/script/minify/contact-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/script/minify/contact-min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"/script/minify/index-min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -215,6 +226,14 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"/sendMail.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/sendMail.php",
+		"oF": 0
 		},
 	"/style/css/contact.css": {
 		"aP": 1,
