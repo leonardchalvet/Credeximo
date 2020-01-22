@@ -107,13 +107,25 @@
 										Text erreur
 									</div>
 								</div>
-								<textarea name="" id="" placeholder="Votre message"></textarea>
-								<button class="">
+								<div class="container-textarea">
+									<textarea name="" id="" placeholder="Votre message"></textarea>
+									<div class="text-error">
+										Text erreur
+									</div>
+								</div>
+								
+								<button class="error">
 									<span class="btn-text">
 										ENVOYER
 									</span>
 									<span class="btn-check">
 										✓
+									</span>
+									<span class="btn-loading">
+										<span class="spin"></span>
+									</span>
+									<span class="btn-error">
+										Veuillez recommencer
 									</span>
 								</button>
 							</div>
