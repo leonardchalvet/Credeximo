@@ -34,6 +34,6 @@
 
 		echo 'true';
 	}
-	else { echo 'false;' }
+	else { echo 'false'; }
 
 ?>
