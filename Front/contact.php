@@ -34,7 +34,7 @@
 					<form action="">
 						<div class="container-col">
 							<div class="col">
-								<div class="container-input error">
+								<div class="container-input">
 									<div class="icn">
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 										    <g id="icn-form-1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
@@ -71,7 +71,7 @@
 											</g>
 										</svg>
 									</div>
-									<input type="text" placeholder="Prenom">
+									<input type="text" placeholder="Prenom" name="email">
 									<div class="text-error">
 										Text erreur
 									</div>
@@ -85,7 +85,7 @@
 											</g>
 										</svg>
 									</div>
-									<input type="text" placeholder="Prenom">
+									<input type="text" placeholder="Prenom" name="phone">
 									<div class="text-error">
 										Text erreur
 									</div>
