@@ -1,0 +1,171 @@
+@import 'common.scss';
+@import 'header.scss';
+
+/*===================================
+=            PAGE CONTACT           =
+===================================*/
+
+main{
+	padding-top: 160px;
+}
+.section-contact{
+	min-height: calc(100vh - 480px);
+	.wrapper{
+		@include styleGrid4;
+	}
+	.container-title{
+		width: 490px;
+		margin: auto;
+		text-align: center;
+		h1{
+			@include styleH1;
+		}
+		p{
+			@include styleParagraphMedium;
+		}
+	}
+	form{
+		margin-top: 50px;
+		width: 100%;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: flex-start;
+		justify-content: space-between;
+		.container-col{
+			width: 100%;
+			display: flex;
+			flex-flow: row wrap;
+			align-items: flex-start;
+			justify-content: space-between;
+			.col{
+				width: calc(50% - 12px);
+				.container-input{
+					width: 100%;
+					height: 60px;
+					border-radius: 8px;
+					border: 1px solid #DFDFDF;
+					position: relative;
+					display: flex;
+					flex-flow: row wrap;
+					transition: all 0.25s ease;
+					&:not(:last-child){
+						margin-bottom: 40px;
+					}
+					.icn{
+						width: 60px;
+						height: 100%;
+						position: relative;
+						svg{
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							max-width: 24px;
+							max-height: 24px;
+							stroke: $colorMain_1;
+						}
+					}
+					input{
+						background-color: transparent;
+						outline: none;
+						border: none;
+						width: 100%;
+						height: 100%;
+						flex: 1;
+						@include styleParagraphMedium;
+						&::placeholder{
+							@include styleParagraphMedium;
+						}
+					}
+					.text-error{
+						display: none;
+						@include styleParagraphMedium;
+						position: absolute;
+						left: 0px;
+						top: calc(100% + 5px);
+						color: #FF0000;
+					}
+					&.error{
+						border-color: #FF0000;
+						.icn{
+							svg{
+								stroke: #FF0000;
+							}
+						}
+						input{
+							&::placeholder{
+								color: #FF0000;
+							}
+							color: #FF0000;
+						}
+						.text-error{
+							display: block;
+						}
+					}
+				}
+				textarea{
+					outline: none;
+					padding: 20px;
+					resize: none;
+					width: 100%;
+					height: 260px;
+					border-radius: 8px;
+					border: 1px solid #DFDFDF;
+					@include styleParagraphMedium;
+					&::placeholder{
+						@include styleParagraphMedium;
+					}
+				}
+				button{
+					position: relative;
+					margin-top: 50px;
+					@include styleButton_1;
+					width: 100%;
+					.btn-check{
+						font-size: 30px;
+						line-height: 30px;
+						color: #FFF;
+						opacity: 0;
+						position: absolute;
+						left: 0px;
+						width: 100%;
+						text-align: center;
+					}
+					&.valid{
+						.btn-text{
+							opacity: 0;
+						}
+						.btn-check{
+							opacity: 1;
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
+
+@media screen and (max-width: $breakPoint_mobile){
+	.section-contact{
+		.container-title{
+			width: 100%;
+		}
+		form{
+			.container-col{
+				.col{
+					width: 100%;
+					&:nth-child(1){
+						margin-bottom: 40px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*=======================================
+=            END PAGE CONTACT           =
+=======================================*/
+
+@import 'footer.scss';

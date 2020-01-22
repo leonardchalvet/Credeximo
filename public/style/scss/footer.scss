@@ -1,0 +1,21 @@
+footer{
+	background-color: #000000;
+	padding: 55px 0px 65px 0px;
+	margin-top: 70px;
+	.logo{
+		display: block;
+		margin: auto;
+		width: 175px;
+	}
+	.foot{
+		padding-top: 35px;
+		text-align: center;
+		margin-top: 55px;
+		@include styleGrid1;
+		border-top: 1px solid rgba(255, 255, 255, 0.4);
+		p{
+			@include styleParagraphMedium;
+			color: #A4A4A4;
+		}
+	}
+}
