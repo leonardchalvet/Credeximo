@@ -103,19 +103,44 @@ main{
 						}
 					}
 				}
-				textarea{
-					outline: none;
-					padding: 20px;
-					resize: none;
+				.container-textarea{
 					width: 100%;
-					height: 260px;
-					border-radius: 8px;
-					border: 1px solid #DFDFDF;
-					@include styleParagraphMedium;
-					&::placeholder{
+					position: relative;
+					textarea{
+						outline: none;
+						padding: 20px;
+						resize: none;
+						width: 100%;
+						height: 260px;
+						border-radius: 8px;
+						border: 1px solid #DFDFDF;
 						@include styleParagraphMedium;
+						&::placeholder{
+							@include styleParagraphMedium;
+						}
+					}
+					.text-error{
+						display: none;
+						@include styleParagraphMedium;
+						position: absolute;
+						left: 0px;
+						top: calc(100% + 5px);
+						color: #FF0000;
+					}
+					&.error{
+						textarea{
+							border-color: #FF0000;
+							&::placeholder{
+								color: #FF0000;
+							}
+							color: #FF0000;
+						}
+						.text-error{
+							display: block;
+						}
 					}
 				}
+				
 				button{
 					position: relative;
 					margin-top: 50px;
@@ -137,6 +162,58 @@ main{
 						}
 						.btn-check{
 							opacity: 1;
+						}
+					}
+					.btn-loading{
+						opacity: 0;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						.spin{
+							display: block;
+							height: 20px;
+							width: 20px;
+							border-radius: 10px;
+							border: 1px solid #FFF;
+							border-right: 1px solid transparent;
+
+							animation-duration: 1s;
+							animation-name: scroll;
+							animation-iteration-count: infinite;
+							animation-timing-function: linear;
+							@keyframes scroll {
+								from {
+									transform: rotate(0deg);
+								}
+
+								to {
+									transform: rotate(360deg);
+								}
+							}
+						}
+					}
+					&.loading{
+						.btn-text{
+							opacity: 0;
+						}
+						.btn-loading{
+							opacity: 1;
+						}
+					}
+					.btn-error{
+						display: none;
+						position: absolute;
+						top: calc(100% + 10px);
+						@include styleParagraphMedium;
+						color: #FF0000;
+						width: 100%;
+						left: 0px;
+						text-align: center;
+					}
+					&.error{
+						.btn-error{
+							display: block;
 						}
 					}
 				}
