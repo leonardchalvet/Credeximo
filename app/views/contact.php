@@ -33,7 +33,7 @@ $document = $WPGLOBAL['document']->data;
           </div>
         
 
-          <form method="post" action="/sendMail.php">
+          <form method="post" onsubmit="return false;">
             <input type="hidden" name="sendto" value="<?= RichText::asText($document->contact_sendto); ?>" >
             <div class="container-col">
               <div class="col">
@@ -60,7 +60,7 @@ $document = $WPGLOBAL['document']->data;
                         </g>
                     </svg>
                   </div>
-                  <input type="text" placeholder="<?= RichText::asText($document->contact_firstname); ?>" name="lastfirst">
+                  <input type="text" placeholder="<?= RichText::asText($document->contact_firstname); ?>" name="firstname">
                   <div class="text-error">
                     <?= RichText::asText($document->contact_error); ?>
                   </div>
@@ -110,13 +110,21 @@ $document = $WPGLOBAL['document']->data;
                     <?= RichText::asText($document->contact_error); ?>
                   </div>
                 </div>
-                <textarea name="" id="" placeholder="<?= RichText::asText($document->contact_message); ?>" name="message"></textarea>
+                <div class="container-textarea">
+                  <textarea name="message" placeholder="<?= RichText::asText($document->contact_message); ?>" name="message"></textarea>
+                </div>
                 <button class="">
                   <span class="btn-text">
                     <?= RichText::asText($document->contact_btntext); ?>
                   </span>
                   <span class="btn-check">
                     ✓
+                  </span>
+                  <span class="btn-loading">
+                    <span class="spin"></span>
+                  </span>
+                  <span class="btn-error">
+                    <?= RichText::asText($document->contact_restart); ?>
                   </span>
                 </button>
               </div>
