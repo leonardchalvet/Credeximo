@@ -1,6 +1,7 @@
 <?php 
 use Prismic\Dom\RichText;
 $document = $WPGLOBAL['document']->data;
+$email = isset($_POST['email']) ? trim($_POST['email']) : "" ;
 ?>
 <html>
   <head>
@@ -74,7 +75,7 @@ $document = $WPGLOBAL['document']->data;
                       </g>
                     </svg>
                   </div>
-                  <input type="text" placeholder="<?= RichText::asText($document->contact_email); ?>" name="email">
+                  <input type="text" placeholder="<?= RichText::asText($document->contact_email); ?>" name="email" value="<?php echo($email); ?>">
                   <div class="text-error">
                     <?= RichText::asText($document->contact_error); ?>
                   </div>

@@ -30,7 +30,7 @@ $document = $WPGLOBAL['document']->data;
         <div class="wrapper">
           <?= RichText::asHtml($document->cover_title); ?>
           <div class="container-mail">
-            <form method="post" action="<?= $document->cover_btnlink->url; ?>">
+            <form method="post" action="/contact">
               <input type="text" name="email" placeholder="<?= RichText::asText($document->cover_placeholder); ?>">
               <button>
                 <span class="btn-text"><?= RichText::asText($document->cover_btntext); ?></span>
